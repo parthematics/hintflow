@@ -20,3 +20,26 @@ or
 ```bash
 yarn add hintflow
 ```
+
+## Usage
+To use HintFlow, import the `Hint` component and specify the target element selector, message, and optional positioning.
+```typescript
+import React from 'react';
+import { HintFlow } from 'hintflow';
+
+function App() {
+  return (
+    <div className="App">
+      <h1 id="welcome">Welcome to HintFlow!</h1>
+      <HintFlow
+        id="welcome-hint"
+        message="Check out this awesome new feature!"
+        targetSelector="#welcome"
+        position="right"
+      />
+    </div>
+  );
+}
+
+export default App;
+```
