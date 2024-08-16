@@ -1,6 +1,6 @@
-# Hintflow
+# *hintflow*
 
-HintFlow is a lightweight and easy-to-configure React library for creating dismissable in-app cues, helping you guide users through new features or important changes in a non-intrusive way.
+*hintflow* is a lightweight and easy-to-configure React library for creating dismissable in-app cues, helping you guide users through new features or important changes in a non-intrusive way.
 
 ## Features
 
@@ -22,7 +22,7 @@ yarn add hintflow
 ```
 
 ## Usage
-To use HintFlow, import the `Hint` component and specify the target element selector, message, and optional positioning.
+To use *hintflow*, import the `Hint` component and specify the target element selector, message, and optional positioning.
 ```typescript
 import React from 'react';
 import { Hint } from 'hintflow';
@@ -30,7 +30,7 @@ import { Hint } from 'hintflow';
 function App() {
   return (
     <div className="App">
-      <h1 id="welcome">Welcome to HintFlow!</h1>
+      <h1 id="welcome">Welcome to hintflow!</h1>
       <Hint
         id="welcome-hint"
         message="Check out this awesome new feature!"
@@ -52,16 +52,16 @@ export default App;
 - `position` (string, optional, default: 'bottom'): Position of the hint relative to the target element. Can be 'top', 'bottom', 'left', or 'right'.
 
 ## Example
-Here's how you might use HintFlow to introduce a new button in your UI:
+Here's how you might use *hintflow* to introduce a new button in your UI:
 ```typescript
 import React from 'react';
-import { HintFlow } from 'hintflow';
+import { Hint } from 'hintflow';
 
 function App() {
   return (
     <div>
       <button id="new-feature-button">New Feature</button>
-      <HintFlow
+      <Hint
         id="new-feature-hint"
         message="Click here to try out our new feature!"
         targetSelector="#new-feature-button"
@@ -75,7 +75,7 @@ export default App;
 ```
 
 ## Contributing
-We welcome contributions! Please submit issues or pull requests to help improve HintFlow.
+We welcome contributions! Please submit issues or pull requests to help improve *hintflow*.
 
 ## Local Development
 Clone the repository:
@@ -100,4 +100,4 @@ yarn build
 ```
 
 ## License
-HintFlow is licensed under the MIT License. See the LICENSE file for more details.
+*hintflow* is licensed under the MIT License. See the LICENSE file for more details.
