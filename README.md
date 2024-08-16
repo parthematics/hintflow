@@ -16,3 +16,7 @@ Install the library using npm or yarn:
 ```bash
 npm install hintflow
 ```
+or 
+```bash
+yarn add hintflow
+```
