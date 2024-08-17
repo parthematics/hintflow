@@ -1,0 +1,49 @@
+.hintflow-popup {
+  background-color: #1e3a8a;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: auto;
+  max-width: 20rem;
+  z-index: 50;
+  position: relative;
+}
+
+.hintflow-popup .dismiss-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.hintflow-popup .dismiss-button:hover {
+  color: #d1d5db;
+}
+
+.hintflow-popup .dismiss-button:focus {
+  outline: none;
+}
+
+.hintflow-popup .message {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: left;
+}
+
+.close-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.close-icon:hover {
+  fill: #d1d5db;
+}

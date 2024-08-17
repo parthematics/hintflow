@@ -20,7 +20,7 @@ module.exports = {
     peerDepsExternal(),
     typescript(),
     postcss({
-      extract: "index.css",
+      extract: true,
       minimize: true,
     }),
   ],

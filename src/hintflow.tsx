@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CloseIcon } from "./icons";
+import "./style.css";
 
 interface HintProps {
   id: string;
@@ -7,6 +8,8 @@ interface HintProps {
   targetSelector: string;
   dismissable?: boolean;
   position?: "top" | "bottom" | "left" | "right";
+  color?: string;
+  align?: "left" | "center" | "right";
 }
 
 export const Hint: React.FC<HintProps> = ({
@@ -15,6 +18,8 @@ export const Hint: React.FC<HintProps> = ({
   targetSelector,
   dismissable = true,
   position = "bottom",
+  color = "#1e3a8a",
+  align = "center",
 }) => {
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -37,37 +42,60 @@ export const Hint: React.FC<HintProps> = ({
 
   const rect = targetElement.getBoundingClientRect();
 
+  const topPosition =
+    position === "top"
+      ? rect.top + window.scrollY - 10
+      : position === "bottom"
+      ? rect.top + window.scrollY + rect.height + 10
+      : rect.top + window.scrollY + rect.height / 2;
+
+  const leftPosition =
+    position === "left"
+      ? rect.left + window.scrollX - 10
+      : position === "right"
+      ? rect.left + window.scrollX + rect.width + 10
+      : align === "left"
+      ? rect.left + window.scrollX
+      : align === "center"
+      ? rect.left + window.scrollX + rect.width / 2
+      : rect.left + window.scrollX + rect.width;
+
+  const transform =
+    position === "top"
+      ? "translate(-50%, -100%)"
+      : position === "bottom"
+      ? "translate(-50%, 0)"
+      : position === "left"
+      ? "translate(-100%, -50%)"
+      : position === "right"
+      ? "translate(0, -50%)"
+      : align === "center"
+      ? "translate(-50%, 0)"
+      : align === "right"
+      ? "translateX(-100%)"
+      : "none";
+
   const style = {
-    top: rect.top + window.scrollY + (position === "bottom" ? rect.height : 0),
-    left: rect.left + window.scrollX + (position === "right" ? rect.width : 0),
+    top: topPosition,
+    left: leftPosition,
+    transform,
+    backgroundColor: color,
     position: "absolute" as const,
-    transform:
-      position === "top"
-        ? "translateY(-100%)"
-        : position === "right"
-        ? "translateX(100%)"
-        : position === "left"
-        ? "translateX(-100%)"
-        : "none",
+    zIndex: 1000,
   };
 
   return (
-    <div
-      style={style}
-      className="bg-blue-600 py-4 text-white rounded-lg shadow-lg w-auto max-w-xs z-50 relative"
-    >
+    <div style={style} className="hintflow-popup">
       {dismissable && (
         <button
           onClick={handleDismiss}
-          className="absolute top-2 right-2 text-white hover:text-gray-300 focus:outline-none"
+          className="dismiss-button"
           aria-label="Dismiss"
         >
           <CloseIcon className="size-4" />
         </button>
       )}
-      <span className="block mt-3 text-sm leading-relaxed mx-4 text-left">
-        {message}
-      </span>
+      <span className="message">{message}</span>
     </div>
   );
 };
