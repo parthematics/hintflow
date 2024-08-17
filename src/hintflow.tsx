@@ -92,7 +92,7 @@ export const Hint: React.FC<HintProps> = ({
           className="dismiss-button"
           aria-label="Dismiss"
         >
-          <CloseIcon className="size-4" />
+          <CloseIcon />
         </button>
       )}
       <span className="message">{message}</span>
