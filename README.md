@@ -35,7 +35,9 @@ function App() {
         id="welcome-hint"
         message="Check out this awesome new feature!"
         targetSelector="#welcome"
-        position="right"
+        position="bottom"
+        align="center"
+        color="#808080"
       />
     </div>
   );
@@ -50,6 +52,7 @@ export default App;
 - `targetSelector` (string, required): A CSS selector for the target element that the hint should be anchored to.
 - `dismissable` (boolean, optional, default: true): Whether the hint can be dismissed by the user.
 - `position` (string, optional, default: 'bottom'): Position of the hint relative to the target element. Can be 'top', 'bottom', 'left', or 'right'.
+- `align` (string, optional, default: 'center'): Alignment of the hint relative to the target element. Can be 'left', 'center', or 'right'.
 
 ## Example
 Here's how you might use *hintflow* to introduce a new button in your UI:
@@ -65,7 +68,8 @@ function App() {
         id="new-feature-hint"
         message="Click here to try out our new feature!"
         targetSelector="#new-feature-button"
-        position="top"
+        position="bottom"
+        align="center"
       />
     </div>
   );
