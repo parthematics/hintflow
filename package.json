@@ -1,10 +1,27 @@
 {
   "name": "hintflow",
   "version": "1.0.0",
+  "description": "A lightweight and easy-to-configure React library for creating dismissable in-app cues, helping you guide users through new features or important changes in a non-intrusive way.",
   "main": "dist/index.js",
-  "repository": "https://github.com/parthematics/hintflow.git",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parthematics/hintflow.git"
+  },
   "author": "parthematics <parthematics@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "component",
+    "hint",
+    "popup",
+    "ui",
+    "typescript"
+  ],
   "dependencies": {},
   "peerDependencies": {
     "react": "^18.0.0",
@@ -23,6 +40,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "watch": "yarn build && yarn start"
+    "watch": "yarn build && yarn start",
+    "prepublishOnly": "yarn build"
   }
 }
