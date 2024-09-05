@@ -43,10 +43,6 @@ temp/
 # Tailwind CSS
 .tailwind/
 
-# Lock files
-package-lock.json
-yarn.lock
-
 # Miscellaneous
 .env
 .env.local
