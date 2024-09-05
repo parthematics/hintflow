@@ -1,6 +1,6 @@
-const typescript = require("rollup-plugin-typescript2");
-const peerDepsExternal = require("rollup-plugin-peer-deps-external");
-const postcss = require("rollup-plugin-postcss");
+const typescript = require("rollup-plugin-typescript2")
+const peerDepsExternal = require("rollup-plugin-peer-deps-external")
+const postcss = require("rollup-plugin-postcss")
 
 module.exports = {
   input: "./src/index.tsx",
@@ -25,4 +25,4 @@ module.exports = {
     }),
   ],
   external: ["react", "react-dom"],
-};
+}
